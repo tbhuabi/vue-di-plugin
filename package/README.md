@@ -4,13 +4,13 @@
 
 ## 安装
 ```
-npm install @tanbo/vue-di-plugin reflect-metadata
+npm install @tanbo/vue-di-plugin
 ```
 
 ## 配置 tsconfig
 
-```json
 在 tsconfig.json 中加入如下配置
+```json
 {
   "compilerOptions": {
     "emitDecoratorMetadata": true,
