@@ -40,7 +40,6 @@ export class Child {
 在创建 App 时提供根依赖
 ```typescript
 import { createApp } from 'vue'
-import 'reflect-metadata'
 import App from './App.vue'
 import { reflectiveInjectorPlugin } from '@tanbo/vue-di-plugin';
 
