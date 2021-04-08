@@ -1,6 +1,6 @@
 {
   "name": "@tanbo/vue-di-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A dependency injection Library for vue3",
   "main": "./bundles/public-api.js",
   "module": "./bundles/public-api.js",

@@ -42,20 +42,20 @@ export class Child {
 import { createApp } from 'vue'
 import 'reflect-metadata'
 import App from './App.vue'
-import { diPlugin } from '@tanbo/vue-di-plugin';
+import { reflectiveInjectorPlugin } from '@tanbo/vue-di-plugin';
 
 import { Parent, Child } from './deps'
 
 createApp(App)
   // 提供根依赖，如果没有，可以省略
-  .use(diPlugin, [Parent, Child])
+  .use(reflectiveInjectorPlugin, [Parent, Child])
   .mount('#app')
 ```
 在组件中使用
 ```typescript
 import { defineComponent } from 'vue'
 
-import { useReflectiveInjector } from './lib/di-plugin'
+import { useReflectiveInjector } from '@tanbo/vue-di-plugin'
 import { Child } from './deps'
 
 export default defineComponent({
@@ -70,6 +70,6 @@ export default defineComponent({
 
 ## 小知识
 
-在组件内调用 `useReflectiveInjector` 时，也可以传入新的 providers，然后再通过返回的 injector 实例获取 provider 提供的类。同时，所有的后代组件也都可以通过 injector 获取到上层组件提供的类。
+在组件内调用 `useReflectiveInjector` 时，也可以传入新的 providers，然后再通过返回的 injector 实例获取 provider 提供的类的实例。同时，所有的后代组件也都可以通过 injector 获取到上层组件提供的类的实例。
 
 更多依赖注入的用法请参考 [@tanbo/di](https://github.com/tbhuabi/di)
