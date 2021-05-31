@@ -31,7 +31,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "@tanbo/di": "0.0.28",
+    "@tanbo/di": "0.0.32",
     "reflect-metadata": "^0.1.13",
     "vue": "^3.0.0"
   }
