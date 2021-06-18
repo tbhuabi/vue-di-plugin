@@ -26,7 +26,7 @@ export function useReflectiveInjector(providers: Provider[] = []) {
   return contextInjector
 }
 
-export class TestBad {
+export class TestBed {
   static useReflectiveInjector(providers: Provider[]) {
     replacedContextInjector = new ReflectiveInjector(null, providers)
     return replacedContextInjector;
