@@ -12,8 +12,8 @@ function createReplacedInjector(providers: Provider[] = []) {
   return injector;
 }
 
-export function reflectiveInjectorPlugin(app: App, providers: Provider[]) {
-  app.provide(DIInjectKey, new ReflectiveInjector(new NullInjector(), providers))
+export function reflectiveInjectorPlugin(app: App, providers: Provider[] | Injector) {
+  app.provide(DIInjectKey, Array.isArray(providers) ? new ReflectiveInjector(new NullInjector(), providers) : providers)
 }
 
 export function useReflectiveInjector(providers: Provider[] = []) {

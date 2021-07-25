@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "target": "esnext",
-    "module": "esnext",
+    "target": "es6",
+    "module": "umd",
     "moduleResolution": "node",
     "sourceMap": false,
     "emitDecoratorMetadata": true,
@@ -16,7 +16,7 @@
     "downlevelIteration": true,
     "esModuleInterop": true,
     "baseUrl": "./",
-    "outDir": "package/bundles/esm",
+    "outDir": "package/bundles/umd",
     "paths": {
       "@tanbo/vue-di-plugin": [
         "src/public-api.ts"

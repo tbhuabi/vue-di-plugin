@@ -38,16 +38,19 @@ export class Child {
 }
 ```
 在创建 App 时提供根依赖
+
 ```typescript
 import { createApp } from 'vue'
 import App from './App.vue'
 import { reflectiveInjectorPlugin } from '@tanbo/vue-di-plugin';
 
 import { Parent, Child } from './deps'
+import { NullInjector, ReflectiveInjector } from '@tanbo/di';
 
+const rootInjector = new ReflectiveInjector(new NullInjector(), [Parent, Child])
 createApp(App)
   // 提供根依赖，如果没有，可以省略
-  .use(reflectiveInjectorPlugin, [Parent, Child])
+  .use(reflectiveInjectorPlugin, rootInjector)
   .mount('#app')
 ```
 在组件中使用
