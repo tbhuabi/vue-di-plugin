@@ -42,10 +42,9 @@ export class Child {
 ```typescript
 import { createApp } from 'vue'
 import App from './App.vue'
-import { reflectiveInjectorPlugin } from '@tanbo/vue-di-plugin';
+import { reflectiveInjectorPlugin, NullInjector, ReflectiveInjector } from '@tanbo/vue-di-plugin';
 
 import { Parent, Child } from './deps'
-import { NullInjector, ReflectiveInjector } from '@tanbo/di';
 
 const rootInjector = new ReflectiveInjector(new NullInjector(), [Parent, Child])
 createApp(App)
