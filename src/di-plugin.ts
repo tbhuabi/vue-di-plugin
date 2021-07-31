@@ -1,5 +1,5 @@
 import { App, inject, InjectionKey, provide } from 'vue'
-import { Injector, NullInjector, Provider, ReflectiveInjector } from '@tanbo/di'
+import { Injector, NullInjector, Provider, ReflectiveInjector, Scope } from '@tanbo/di'
 
 const DIInjectKey = Symbol('DIInjectKey') as InjectionKey<Injector>
 let replacedContextInjector: ReflectiveInjector = null;
@@ -12,16 +12,16 @@ function createReplacedInjector(providers: Provider[] = []) {
   return injector;
 }
 
-export function reflectiveInjectorPlugin(app: App, providers: Provider[] | Injector) {
-  app.provide(DIInjectKey, Array.isArray(providers) ? new ReflectiveInjector(new NullInjector(), providers) : providers)
+export function reflectiveInjectorPlugin(app: App, providers: Provider[] | Injector, scope: Scope = null) {
+  app.provide(DIInjectKey, Array.isArray(providers) ? new ReflectiveInjector(new NullInjector(), providers, scope) : providers)
 }
 
-export function useReflectiveInjector(providers: Provider[] = []) {
+export function useReflectiveInjector(providers: Provider[] = [], scope: Scope = null) {
   if (replacedContextInjector) {
     return createReplacedInjector(providers)
   }
   const parentInjector = inject(DIInjectKey)
-  const contextInjector = new ReflectiveInjector(parentInjector! || new NullInjector(), providers);
+  const contextInjector = new ReflectiveInjector(parentInjector! || new NullInjector(), providers, scope);
   provide(DIInjectKey, contextInjector)
   return contextInjector
 }
