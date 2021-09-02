@@ -2,6 +2,8 @@
 =============================
 本插件用于解决 vue 框架自带的依赖注入能力较为简单的问题，通过本插件，可以实现自动依赖分析，分层注入，自动关联上下文等功能
 
+> 如果你使用的是 vue2，请看这里： [vue2-di-plugin](https://github.com/tbhuabi/vue2-di-plugin)
+
 ## 安装
 ```
 npm install @tanbo/vue-di-plugin
