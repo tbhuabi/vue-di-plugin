@@ -16,6 +16,15 @@ export function reflectiveInjectorPlugin(app: App, providers: Provider[] | Injec
   app.provide(DIInjectKey, Array.isArray(providers) ? new ReflectiveInjector(new NullInjector(), providers, scope) : providers)
 }
 
+export function useRootReflectiveInjector(providers: Provider[] = [], scope: Scope = null) {
+  if (replacedContextInjector) {
+    return createReplacedInjector(providers)
+  }
+  const contextInjector = new ReflectiveInjector(new NullInjector(), providers, scope);
+  provide(DIInjectKey, contextInjector)
+  return contextInjector
+}
+
 export function useReflectiveInjector(providers: Provider[] = [], scope: Scope = null) {
   if (replacedContextInjector) {
     return createReplacedInjector(providers)

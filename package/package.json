@@ -1,8 +1,8 @@
 {
   "name": "@tanbo/vue-di-plugin",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A dependency injection Library for vue3",
-  "main": "./bundles/umd/public-api.js",
+  "main": "./bundles/commonjs/public-api.js",
   "module": "./bundles/esm/public-api.js",
   "typings": "./bundles/esm/public-api.d.ts",
   "license": "MIT",
@@ -18,7 +18,7 @@
     "url": "https://github.com/tbhuabi/vue-di-plugin.git/issues"
   },
   "dependencies": {
-    "@tanbo/di": "~1.0.5",
+    "@tanbo/di": "^1.0.6",
     "vue": "^3.0.0",
     "reflect-metadata": "^0.1.13"
   }

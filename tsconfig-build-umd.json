@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "target": "es6",
-    "module": "umd",
+    "target": "es5",
+    "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": false,
     "emitDecoratorMetadata": true,
@@ -16,7 +16,7 @@
     "downlevelIteration": true,
     "esModuleInterop": true,
     "baseUrl": "./",
-    "outDir": "package/bundles/umd",
+    "outDir": "package/bundles/commonjs",
     "paths": {
       "@tanbo/vue-di-plugin": [
         "src/public-api.ts"
